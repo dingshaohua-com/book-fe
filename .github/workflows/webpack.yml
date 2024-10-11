@@ -39,3 +39,4 @@ jobs:
           REMOTE_USER: "root"
           # 目标地址
           TARGET: "/usr/share/nginx/html"
+          SCRIPT_BEFORE: ls
