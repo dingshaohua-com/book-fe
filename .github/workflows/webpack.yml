@@ -34,6 +34,7 @@ jobs:
           SOURCE: "build/"
           # 服务器ip
           REMOTE_HOST: 103.110.80.247
+          REMOTE_PORT: 31825
           # 用户
           REMOTE_USER: "root"
           # 目标地址
