@@ -75,7 +75,7 @@ releaseDate: "2024-10-01T11:03:17.142Z"
 releaseNotes: "新增动态转发功能\r\n修复Bug，优化UI"
 ```
 
-第二个文件代表升级配置信息，这个文件在 app 内部，将在应用启动时调用检查更新方法的时候被调用。
+第二个文件代表升级配置信息，这个文件在 app 内部，将在应用启动时调用检查更新方法的时候被调用
 
 ```yml title="app-update.yml"
 provider: generic
