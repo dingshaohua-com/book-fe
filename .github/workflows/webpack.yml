@@ -28,16 +28,16 @@ jobs:
         with:
           # 私钥
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          # SCP参数：部署时清空服务器目标目录下的文件
-          # ARGS: "-avzr --delete"
-          ARGS: "-rlgoDzvc -i --delete"
-          # 源目录
-          SOURCE: "build/"
           # 服务器ip
           REMOTE_HOST: 103.110.80.247
           REMOTE_PORT: 31825
           # 用户
           REMOTE_USER: "root"
+          # SCP参数：部署时清空服务器目标目录下的文件
+          # ARGS: "-avzr --delete"
+          # ARGS: "-rlgoDzvc -i --delete"
+          # 源目录
+          SOURCE: "build/"
           # 目标地址
           TARGET: "/home"
           SCRIPT_BEFORE: |
