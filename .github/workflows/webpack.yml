@@ -13,15 +13,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: 设置Node版本
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20.x"
+      # - name: 设置Node版本
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: "20.x"
 
-      - name: 执行构建
-        run: |
-          yarn
-          npm run build
+      # - name: 执行构建
+      #   run: |
+      #     yarn
+      #     npm run build
 
       - name: 部署到服务器
         uses: easingthemes/ssh-deploy@main
@@ -37,7 +37,7 @@ jobs:
           # ARGS: "-avzr --delete"
           # ARGS: "-rlgoDzvc -i --delete"
           # 源目录
-          SOURCE: "build/"
+          SOURCE: "/"
           # 目标地址
           TARGET: "/home"
           SCRIPT_BEFORE: |
