@@ -38,5 +38,5 @@ jobs:
           # 用户
           REMOTE_USER: "root"
           # 目标地址
-          TARGET: "/home/html"
+          TARGET: "/home"
           SCRIPT_BEFORE: ls
