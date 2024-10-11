@@ -2,28 +2,39 @@ name: NodeJS with Webpack
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: Use Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20.x'
-        
-    # - name: Install Yarn
-    #     uses: borales/actions-yarn@v4
-    #     with:
-    #       cmd: install
+      - name: 设置Node版本
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
 
-    - name: Build
-      run: |
-        yarn
-        npm run build
+      - name: 执行构建
+        run: |
+          yarn
+          npm run build
+
+      - name: 部署到服务器
+        uses: easingthemes/ssh-deploy@v5.1.0
+        with:
+          # 私钥
+          SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          # SCP参数：部署时清空服务器目标目录下的文件
+          ARGS: "-avzr --delete"
+          # 源目录
+          SOURCE: "build/"
+          # 服务器ip
+          REMOTE_HOST: 103.110.80.247
+          # 用户
+          REMOTE_USER: "root"
+          # 目标地址
+          TARGET: "/usr/share/nginx/html"
