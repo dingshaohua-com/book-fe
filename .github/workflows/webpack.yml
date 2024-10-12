@@ -12,7 +12,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
       - name: 部署到服务器
         uses: easingthemes/ssh-deploy@main
         with:
