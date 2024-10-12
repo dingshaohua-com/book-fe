@@ -33,4 +33,5 @@ jobs:
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           REMOTE_USER: root
           TARGET: /home/apps-root/book-fe
+          
             
