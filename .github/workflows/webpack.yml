@@ -19,8 +19,8 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           ARGS: "-rlgoDzvc -i"
           SOURCE: "/"
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
+          REMOTE_HOST: 103.110.80.247
+          REMOTE_PORT: 31825
           REMOTE_USER: root
           TARGET: /home
           SCRIPT_BEFORE: |
@@ -30,4 +30,4 @@ jobs:
             whoami
             ls -al
             echo $RSYNC_STDOUT
-            
+
