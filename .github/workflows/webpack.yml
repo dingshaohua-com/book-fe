@@ -27,10 +27,10 @@ jobs:
           SOURCE: "/"
           # 目标地址
           TARGET: "/home"
-          SCRIPT_BEFORE: |
-            whoami
-            ls -al
-          SCRIPT_AFTER: |
-            whoami
-            ls -al
-            echo $RSYNC_STDOUT
+          # SCRIPT_BEFORE: |
+          #   whoami
+          #   ls -al
+          # SCRIPT_AFTER: |
+          #   whoami
+          #   ls -al
+          #   echo $RSYNC_STDOUT
